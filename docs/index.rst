@@ -3,13 +3,18 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to FHIR-360 Documentation
-=================================
+FHIR-360
+========
+.. image:: fhir-logo-www.png
+    :width: 140px
+    :align: left
+    :height: 60px
+    :alt: FHIR-LOGO
 
 Contents:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 5
    :glob:
 
    *
