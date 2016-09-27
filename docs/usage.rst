@@ -1,6 +1,6 @@
-========
+====================
 Single Page Template
-========
+====================
 
 To use this template, simply update it::
 
