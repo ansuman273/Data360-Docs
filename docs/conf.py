@@ -178,7 +178,7 @@ html_static_path = ['_static']
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = u'FHIR360'
+htmlhelp_basename = 'FHIR-360'
 
 
 # -- Options for LaTeX output ---------------------------------------------
@@ -228,8 +228,8 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, u'fhir', u'FHIR-360 Documentation',
-     [author], 1)
+    (master_doc, 'fhir', u'FHIR-360 Documentation',
+     [u'Best Ray Infotech & Nusiv Technologies'], 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -242,8 +242,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  (master_doc, u'FHIR', u'FHIR-360 Documentation',
-   author, u'FHIR', 'One line description of project.',
+  (master_doc, 'FHIR', u'FHIR-360 Documentation',
+   u'Best Ray Infotech & Nusiv Technologies', 'FHIR', 'One line description of project.',
    'Miscellaneous'),
 ]
 
