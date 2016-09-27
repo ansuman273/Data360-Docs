@@ -4,5 +4,5 @@ Single Page Template
 
 To use this template, simply update it::
 
-	import read-the-docs-template
+	import fhir-360-template
 
