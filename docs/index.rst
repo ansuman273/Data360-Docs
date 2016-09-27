@@ -6,12 +6,16 @@
 FHIR-360
 ========
 .. image:: fhir-logo-www.png
-    :width: 300px
+    :width: 140px
     :align: left
-    :height: 300px
+    :height: 60px
     :alt: FHIR-LOGO
 
-Contents:
+.. toctree::
+   :maxdepth: 5
+
+CONTENTS
+========
 
 .. toctree::
    :maxdepth: 5
