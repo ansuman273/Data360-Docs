@@ -4,15 +4,15 @@
    contain the root `toctree` directive.
 
 
-.. image:: fhir-logo-www.png
-    :width: 140px
-    :align: left
-    :height: 60px
-    :alt: FHIR-LOGO
-    
+
+
 FHIR-360
 ========
-
+.. image:: fhir-logo-www.png
+    :width: 140px
+    :align: right
+    :height: 60px
+    :alt: FHIR-LOGO
 
 CONTENTS
 ========
