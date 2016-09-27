@@ -14,6 +14,7 @@
 
 import sys
 import os
+import sphinx_rtd_theme
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -43,9 +44,9 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Read the Docs Template'
-copyright = u'2014, Read the Docs'
-
+project = u'FHIR-360'
+copyright = u'2016,  Nusiv Technologies, Inc. All other trademarks, service marks, and copyrights are the property of their respective owners'
+author = u'Best Ray Infotech and Nusiv Technologies'
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
 # built documents.
@@ -93,12 +94,12 @@ pygments_style = 'sphinx'
 # If true, keep warnings as "system message" paragraphs in the built documents.
 #keep_warnings = False
 
-
 # -- Options for HTML output ----------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-html_theme = 'default'
+html_theme = "sphinx_rtd_theme"
+html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -176,7 +177,7 @@ html_static_path = ['_static']
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'ReadtheDocsTemplatedoc'
+htmlhelp_basename = 'FHIR-360'
 
 
 # -- Options for LaTeX output ---------------------------------------------
@@ -196,8 +197,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  ('index', 'ReadtheDocsTemplate.tex', u'Read the Docs Template Documentation',
-   u'Read the Docs', 'manual'),
+  ('index', 'FHIR.tex', u'FHIR-360 Documentation',
+   u'Best Ray Infotech \\& Nusiv Technologies', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -226,8 +227,8 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'readthedocstemplate', u'Read the Docs Template Documentation',
-     [u'Read the Docs'], 1)
+    ('index', 'readthedocstemplate', u'FHIR-360 Documentation',
+     [u'Best Ray Infotech & Nusiv Technologies'], 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -240,8 +241,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'ReadtheDocsTemplate', u'Read the Docs Template Documentation',
-   u'Read the Docs', 'ReadtheDocsTemplate', 'One line description of project.',
+  ('index', 'FHIR', u'FHIR-360 Documentation',
+   u'Best Ray Infotech & Nusiv Technologies', 'One line description of project.',
    'Miscellaneous'),
 ]
 
