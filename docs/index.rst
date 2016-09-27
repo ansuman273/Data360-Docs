@@ -6,9 +6,9 @@
 FHIR-360
 ========
 .. image:: fhir-logo-www.png
-    :width: 140px
+    :width: 300px
     :align: left
-    :height: 60px
+    :height: 300px
     :alt: FHIR-LOGO
 
 Contents:
