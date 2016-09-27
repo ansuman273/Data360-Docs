@@ -227,7 +227,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'readthedocstemplate', u'FHIR-360 Documentation',
+    ('index', 'fhir', u'FHIR-360 Documentation',
      [u'Best Ray Infotech & Nusiv Technologies'], 1)
 ]
 
