@@ -1,41 +1,35 @@
-Multi Page Template
+Project setup in Digital Ocean
 ========
 
-$project will solve your problem of where to start with documentation,
-by providing a basic explanation of how to do it easily.
+These are the software requirements and their set up process in the server(Digital Ocean)
 
-Look how easy it is to use:
-
-    import project
-    # Get your stuff done
-    project.do_stuff()
-
-Features
+MySQL Installation
 --------
 
-- Be awesome
-- Make things faster
+Describe MySQL Installation
+	
 
-Installation
+MongoDB Installation
 ------------
 
-Install $project by running:
+Describe MongoDB Installation
 
-    install project
-
-Contribute
+Solr Installation
 ----------
 
-- Issue Tracker: github.com/$project/$project/issues
-- Source Code: github.com/$project/$project
+Describe Solr Installation
 
-Support
+PostGreSQL Installation
 -------
 
-If you are having issues, please let us know.
-We have a mailing list located at: project@google-groups.com
+Describe PostGreSQL Installation
 
-License
+MirthConnect Installation
 -------
 
-The project is licensed under the BSD license.
+Describe MirthConnect Installation
+
+Python Installation
+-------
+
+Describe Python Installation
