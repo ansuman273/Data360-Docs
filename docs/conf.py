@@ -28,12 +28,10 @@ import os
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = [
-    'sphinx.ext.autodoc',
-]
+extensions = []
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ['ntemplates']
+templates_path = ['_templates']
 
 # The suffix of source filenames.
 source_suffix = '.rst'
@@ -45,9 +43,9 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'FHIR-360'
-copyright = '2016,  Nusiv Technologies, Inc. All other trademarks, service marks, and copyrights are the property of their respective owners'
-author = 'Best Ray Infotech and Nusiv Technologies'
+project = u'FHIR-360'
+copyright = u'2016,  Nusiv Technologies, Inc. All other trademarks, service marks, and copyrights are the property of their respective owners'
+author = u'Best Ray Infotech and Nusiv Technologies'
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
 # built documents.
@@ -69,7 +67,7 @@ language = None
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = []
+exclude_patterns = ['_build']
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
@@ -94,9 +92,6 @@ exclude_patterns = []
 
 # If true, keep warnings as "system message" paragraphs in the built documents.
 #keep_warnings = False
-
-# If true, `todo` and `todoList` produce output, else they produce nothing.
-todo_include_todos = False
 
 # -- Options for HTML output ----------------------------------------------
 
@@ -134,7 +129,7 @@ html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['nstatic']
+html_static_path = ['_static']
 
 # Add any extra paths that contain custom files (such as robots.txt or
 # .htaccess) here, relative to this directory. These files are copied
@@ -183,7 +178,7 @@ html_static_path = ['nstatic']
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'FHIR360'
+htmlhelp_basename = u'FHIR360'
 
 
 # -- Options for LaTeX output ---------------------------------------------
@@ -203,8 +198,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  (master_doc, 'FHIR.tex', 'FHIR-360 Documentation',
-   'Best Ray Infotech \\& Nusiv Technologies', 'manual'),
+  (master_doc, 'FHIR.tex', u'FHIR-360 Documentation',
+   u'Best Ray Infotech \\& Nusiv Technologies', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -233,7 +228,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'fhir', 'FHIR-360 Documentation',
+    (master_doc, u'fhir', u'FHIR-360 Documentation',
      [author], 1)
 ]
 
@@ -247,8 +242,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  (master_doc, 'FHIR', 'FHIR-360 Documentation',
-   author, 'FHIR', 'One line description of project.',
+  (master_doc, u'FHIR', u'FHIR-360 Documentation',
+   author, u'FHIR', 'One line description of project.',
    'Miscellaneous'),
 ]
 
