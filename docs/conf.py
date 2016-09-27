@@ -44,7 +44,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'FHIR-360'
-copyright = u'2014, Read the Docs'
+copyright = u'2016,  Nusiv Technologies, Inc. All other trademarks, service marks, and copyrights are the property of their respective owners.'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
