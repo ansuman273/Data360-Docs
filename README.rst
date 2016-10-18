@@ -814,8 +814,30 @@ As you can see, our slide is now registered as being red.
 
 MirthConnect Installation
 -------------------------
+How To Install and Use Mirth on Ubuntu 16.04
 
-Describe MirthConnect Installation
+Follow the below Link you can install mirth in ubuntu server.
+
+https://www.youtube.com/watch?v=omZyAO2naqs
+
+Manually You can install by below process.
+
+* Download the mirth version what ever you want to install .And keep it in a separate folder.i kept it in download folder
+
+Then follow below process.
+
+sudo apt-get install tasksel
+sudo apt-get install lamp-server^
+sudo apt-get purge openjdk-\*
+sudo apt-get install python-software-properties
+add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get install oracle-java7-installer
+Downloaded  your version Exa-mirthconnect-2.2.1.
+sudo chmod a+x ~/Downloads/mirthconnect-2.2.1.5861.b1248-unix.sh
+sudo ~/Downloads/mirthconnect-2.2.1.5861.b1248-unix.sh
+
+Then You can install mirth in your Server.
 
 Python Installation
 -------------------
