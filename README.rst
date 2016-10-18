@@ -826,8 +826,8 @@ Manually You can install by below process.
 
 Then follow below process.
 
-sudo apt-get install tasksel
-sudo apt-get install lamp-server^
+sudo apt-get install tasksel<br>
+sudo apt-get install lamp-server^<br>
 sudo apt-get purge openjdk-\*
 sudo apt-get install python-software-properties
 add-apt-repository ppa:webupd8team/java
