@@ -11,15 +11,14 @@ Describe MySQL Installation
 
 MongoDB Installation
 --------------------
-How to Install MongoDB on Ubuntu 16.04
-Posted May 5, 2016 91.1k views MongoDB Ubuntu Ubuntu 16.04
+How to Install MongoDB on Ubuntu 16.04?
+
 Introduction
 
 MongoDB is a free and open-source NoSQL document database used commonly in modern web applications. This tutorial will help you set up MongoDB on your server for a production application environment.
 
-As of publication time, the official Ubuntu 16.04 MongoDB packages have not yet been updated to use the new systemd init system which is enabled by default on Ubuntu 16.04. Running MongoDB using those packages on a clean Ubuntu 16.04 server involves following an additional step to configure MongoDB as a systemd service that will automatically start on boot.
+Prerequisites:
 
-Prerequisites
 To follow this tutorial, you will need:
 
 One Ubuntu 16.04 server set up by following this initial server setup tutorial, including a sudo non-root user
