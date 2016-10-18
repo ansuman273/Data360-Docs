@@ -364,18 +364,6 @@ Solr Installation
 
 How to install and configure Solr 6 on Ubuntu 16.04
 
-This tutorial exists for these OS versions
-
-Ubuntu 14.04 LTS (Trusty Tahr)
-On this page
-
-Update your System
-Setting up the Java Runtime Environment
-Installing the Solr application
-Creating a Solr search collection:
-Use the Solr Web Interface
-Virtual machine image download of this tutorial
-Conclusion
 What is Apache Solr? Apache Solr is an open source enterprise-class search platform written in Java which enables you to create custom search engines that index databases, files, and websites. It has back end support for Apache Lucene. It can e.g. be used to search in multiple websites and can show recommendations for the searched content. Solr uses an XML (Extensible Markup Language) based query and result language. There are APIs (Applications program interfaces) available for Python, Ruby and JSON (Javascript Object Notation).
 Some other features that Solr provides are:
 Full-Text Search.
