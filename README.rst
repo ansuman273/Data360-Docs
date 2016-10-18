@@ -826,16 +826,16 @@ Manually You can install by below process.
 
 Then follow below process.
 
-sudo apt-get install tasksel<br>
-sudo apt-get install lamp-server^<br>
-sudo apt-get purge openjdk-\*
-sudo apt-get install python-software-properties
-add-apt-repository ppa:webupd8team/java
-sudo apt-get update
-sudo apt-get install oracle-java7-installer
-Downloaded  your version Exa-mirthconnect-2.2.1.
-sudo chmod a+x ~/Downloads/mirthconnect-2.2.1.5861.b1248-unix.sh
-sudo ~/Downloads/mirthconnect-2.2.1.5861.b1248-unix.sh
+*sudo apt-get install tasksel
+*sudo apt-get install lamp-server^
+*sudo apt-get purge openjdk-\*
+*sudo apt-get install python-software-properties
+*add-apt-repository ppa:webupd8team/java
+*sudo apt-get update
+*sudo apt-get install oracle-java7-installer
+*Downloaded  your version Exa-mirthconnect-2.2.1.
+*sudo chmod a+x ~/Downloads/mirthconnect-2.2.1.5861.b1248-unix.sh
+*sudo ~/Downloads/mirthconnect-2.2.1.5861.b1248-unix.sh
 
 Then You can install mirth in your Server.
 
