@@ -28,21 +28,23 @@ The Ubuntu package management tools (i.e. dpkg and apt) ensure package consisten
 
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
 
-
 2
-
 Create a list file for MongoDB.
 
 Create the /etc/apt/sources.list.d/mongodb.list list file using the following command:
 
 echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | sudo tee /etc/apt/sources.list.d/mongodb.list
+
 3
+
 Reload local package database.
 
 Issue the following command to reload the local package database:
 
 sudo apt-get update
+
 4
+
 Install the MongoDB packages.
 
 You can install either the latest stable version of MongoDB or a specific version of MongoDB.
@@ -75,12 +77,16 @@ The MongoDB instance stores its data files in /var/lib/mongodb and its log files
 If you change the user that runs the MongoDB process, you must modify the access control rights to the /var/lib/mongodb and /var/log/mongodb directories to give this user access to these directories.
 
 1
+
 Start MongoDB.
+
 
 Issue the following command to start mongod:
 
 sudo service mongod start
+
 2
+
 Verify that MongoDB has started successfully
 
 Verify that the mongod process has started successfully by checking the contents of the log file at /var/log/mongodb/mongod.log for a line reading
@@ -89,18 +95,23 @@ Verify that the mongod process has started successfully by checking the contents
 where <port> is the port configured in /etc/mongod.conf, 27017 by default.
 
 3
+
 Stop MongoDB.
 
 As needed, you can stop the mongod process by issuing the following command:
 
 sudo service mongod stop
+
 4
+
 Restart MongoDB.
 
 Issue the following command to restart mongod:
 
 sudo service mongod restart
+
 5
+
 Begin using MongoDB.
 
 To begin using MongoDB, see Getting Started with MongoDB. Also consider the Production Notes document before deploying MongoDB in a production environment.
@@ -113,19 +124,25 @@ To completely remove MongoDB from a system, you must remove the MongoDB applicat
 
 WARNING
 This process will completely remove MongoDB, its configuration, and all databases. This process is not reversible, so ensure that all of your configuration and data is backed up before proceeding.
+
 1
+
 Stop MongoDB.
 
 Stop the mongod process by issuing the following command:
 
 sudo service mongod stop
+
 2
+
 Remove Packages.
 
 Remove any MongoDB packages that you had previously installed.
 
 sudo apt-get purge mongodb-org*
+
 3
+
 Remove Data Directories.
 
 Remove MongoDB databases and log files.
