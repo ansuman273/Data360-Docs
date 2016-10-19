@@ -21,31 +21,31 @@ Prerequisites
 
 Install MongoDB
 
-1
-
 Import the public key used by the package management system.
 
 The Ubuntu package management tools (i.e. dpkg and apt) ensure package consistency and authenticity by requiring that distributors sign packages with GPG keys. Issue the following command to import the MongoDB public GPG Key:
 
+Step 1 -
+
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
 
-2
+
 
 Create a list file for MongoDB.
 
 Create the /etc/apt/sources.list.d/mongodb.list list file using the following command:
-
+Step 2 -
 echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | sudo tee /etc/apt/sources.list.d/mongodb.list
 
-3
+
 
 Reload local package database.
 
 Issue the following command to reload the local package database:
-
+Step 4 -
 sudo apt-get update
 
-4
+
 
 Install the MongoDB packages.
 
@@ -54,18 +54,18 @@ You can install either the latest stable version of MongoDB or a specific versio
 Install the latest stable version of MongoDB.
 
 Issue the following command:
-
+Step 5 -
 sudo apt-get install -y mongodb-org
 Install a specific release of MongoDB.
 
 Specify each component package individually and append the version number to the package name, as in the following example that installs the 2.6.9 release of MongoDB:
-
+Step 6 -
 sudo apt-get install -y mongodb-org=2.6.9 mongodb-org-server=2.6.9 mongodb-org-shell=2.6.9 mongodb-org-mongos=2.6.9 mongodb-org-tools=2.6.9
 
 Pin a specific version of MongoDB.
 
 Although you can specify any available version of MongoDB, apt-get will upgrade the packages when a newer version becomes available. To prevent unintended upgrades, pin the package. To pin the version of MongoDB at the currently installed version, issue the following command sequence:
-
+Step 7 -
 echo "mongodb-org hold" | sudo dpkg --set-selections
 echo "mongodb-org-server hold" | sudo dpkg --set-selections
 echo "mongodb-org-shell hold" | sudo dpkg --set-selections
@@ -79,7 +79,6 @@ The MongoDB instance stores its data files in /var/lib/mongodb and its log files
 
 If you change the user that runs the MongoDB process, you must modify the access control rights to the /var/lib/mongodb and /var/log/mongodb directories to give this user access to these directories.
 
-1
 
 Start MongoDB.
 
@@ -88,8 +87,6 @@ Issue the following command to start mongod:
 
 sudo service mongod start
 
-2
-
 Verify that MongoDB has started successfully
 
 Verify that the mongod process has started successfully by checking the contents of the log file at /var/log/mongodb/mongod.log for a line reading
@@ -97,7 +94,7 @@ Verify that the mongod process has started successfully by checking the contents
 [initandlisten] waiting for connections on port <port>
 where <port> is the port configured in /etc/mongod.conf, 27017 by default.
 
-3
+
 
 Stop MongoDB.
 
@@ -105,7 +102,7 @@ As needed, you can stop the mongod process by issuing the following command:
 
 sudo service mongod stop
 
-4
+
 
 Restart MongoDB.
 
@@ -113,7 +110,7 @@ Issue the following command to restart mongod:
 
 sudo service mongod restart
 
-5
+
 
 Begin using MongoDB.
 
@@ -128,7 +125,7 @@ To completely remove MongoDB from a system, you must remove the MongoDB applicat
 WARNING
 This process will completely remove MongoDB, its configuration, and all databases. This process is not reversible, so ensure that all of your configuration and data is backed up before proceeding.
 
-1
+
 
 Stop MongoDB.
 
@@ -136,7 +133,7 @@ Stop the mongod process by issuing the following command:
 
 sudo service mongod stop
 
-2
+
 
 Remove Packages.
 
@@ -144,7 +141,7 @@ Remove any MongoDB packages that you had previously installed.
 
 sudo apt-get purge mongodb-org*
 
-3
+
 
 Remove Data Directories.
 
@@ -163,7 +160,7 @@ Introduction
 
 OrientDB is a multi-model, NoSQL database with support for graph and document databases. It is a Java application and can run on any operating system. It's also fully ACID-complaint with support for multi-master replication.
 
-In this article, you'll learn how to install and configure the latest Community edition of OrientDB on an Ubuntu 14.04 server.
+In this article, you'll learn how to install and configure the latest Community edition of OrientDB on an Ubuntu 16.04 server.
 
 Prerequisites
 
@@ -171,23 +168,33 @@ To follow this tutorial, you will need the following:
 
 Ubuntu 16.04 Droplet
 
-Step 1 — Installing Oracle Java
+
+Installing Oracle Java
 OrientDB is a Java application that requires Java version 1.6 or higher. Because it's much faster than Java 6 and 7, Java 8 is highly recommended. And that's the version of Java we'll install in this step.
 
 To install Java JRE, add the following Personal Package Archives (PPA):
 
+Step-1
+------
 sudo add-apt-repository ppa:webupd8team/java
 
 Update the package database:
+
+Step-2
+------
 
 sudo apt-get update
 
 Then install Oracle Java. Installing it using this particular package not only installs it, but also makes it the default Java JRE. When prompted, accept the license agreement:
 
+Step-3
+------
 sudo apt-get install oracle-java8-set-default
 
 After installing it, verify that it's now the default Java JRE:
 
+Step-4
+------
 java -version
 
 The expected output is as follows (the exact version may vary):
@@ -197,15 +204,22 @@ java version "1.8.0_60"
 Java(TM) SE Runtime Environment (build 1.8.0_60-b27)
 Java HotSpot(TM) 64-Bit Server VM (build 25.60-b23, mixed mode)
 
-Step 2 — Downloading and Installing OrientDB
+
+
+Downloading and Installing OrientDB
 
 In this step, we'll download and install the latest Community edition of OrientDB. At the time of this publication, OrientDB Community 2.1.3 is the latest version. If a newer version has been released, change the version number to match:
 
+Step-5
+
+------
 wget https://orientdb.com/download.php?file=orientdb-community-2.1.3.tar.gz
 
 The downloaded tarball contains pre-compiled binary files that you need to run OrientDB on your system, so all you need to do is untar it to a suitable directory. Since the /opt is the traditional location for third party programs on Linux, let's untar it there:
 
 
+Step-6
+------
 sudo tar -xf download.php?file=orientdb-community-2.1.3.tar.gz -C /opt
 
 The files are extracted into a directory named orientdb-community-2.1.3. To make it easier to work with, let's rename it:
@@ -213,46 +227,24 @@ The files are extracted into a directory named orientdb-community-2.1.3. To make
 sudo mv /opt/orientdb-community-2.1.3 /opt/orientdb
 
 
-Step 3 — Starting the Server
+
+Starting the Server
 
 Now that the binary is in place, you can start the server and connect to the console. Before that, navigate to the installation directory:
 
+Step-7
+------
 cd /opt/orientdb
 
 Then start the server:
 
+Step-8
+------
 sudo bin/server.sh
 
-Aside from generating a bunch of output, by starting the server for the first time, you'll be prompted to specify a password for the root user account. This is an internal OrientDB account that will be used to access the server. For example, it's the username and password combination that will be used to access OrientDB Studio, the web-based interface for managing OrientDB. If you don't specify a password, one will be generated automatically. However, it's best to specify one yourself, do so when prompted.
 
-Part of the output generated from starting the server tells you what ports the server and OrientDB Studio are listening on:
+ Connecting to the Console
 
-Output
-2015-10-12 11:27:45:095 INFO  Databases directory: /opt/orientdb/databases [OServer]
-2015-10-12 11:27:45:263 INFO  Listening binary connections on 0.0.0.0:2424 (protocol v.32, socket=default) [OServerNetworkListener]
-2015-10-12 11:27:45:285 INFO  Listening http connections on 0.0.0.0:2480 (protocol v.10, socket=default) [OServerNetworkListener]
-
-...
-
-2015-10-12 11:27:45:954 INFO  OrientDB Server v2.1.3 (build UNKNOWN@r; 2015-10-04 10:56:30+0000) is active. [OServer]
-
-Since OrientDB is now running in your terminal window, in a second terminal window to the same Droplet, confirm that the server is listening on ports 2424 (for binary connections) and 2480 (for HTTP connections). To confirm that it's listening for binary connections, execute:
-
-sudo netstat -plunt | grep 2424
-
-The output should look similar to
-
-Output
-tcp6       0      0 :::2424                 :::*                    LISTEN      1617/java
-To confirm that it's listening for HTTP connections, execute:
-
-sudo netstat -plunt | grep 2480
-
-The expected output is as follows:
-
-Output
-tcp6       0      0 :::2480                 :::*                    LISTEN      1617/java
-Step 4 — Connecting to the Console
 Now that the server is running, you can connect to it using the console, that is, the command line interface:
 
 sudo /opt/orientdb/bin/console.sh
@@ -280,7 +272,7 @@ So you've just installed OrientDB, manually started it, and connected to it. Tha
 
 Type CTRL-C in the terminal window with OrientDB still running to stop it.
 
-Step 5 — Configuring OrientDB
+Configuring OrientDB
 
 At this point OrientDB is installed on your system, but it's just a bunch of scripts on the server. In this step, we'll modify the configuration file, and also configure it to run as a daemon on the system. That involves modifying the /opt/orientdb/bin/orientdb.sh script and the /opt/orientdb/config/orientdb-server-config.xml configuration file.
 
@@ -361,7 +353,7 @@ Finally, modify the file's permissions to prevent unauthorized users from readin
 
 sudo chmod 640 /opt/orientdb/config/orientdb-server-config.xml
 
-Step 6 — Installing the Startup Script
+Installing the Startup Script
 
 Now that the scripts have been configured, you can now copy them to their respective system directories. For the script responsible for running the console, copy it to the /usr/bin directory:
 
@@ -391,7 +383,9 @@ update-rc.d: see <http://wiki.debian.org/LSBInitScripts>
    /etc/rc3.d/S20orientdb -> ../init.d/orientdb
    /etc/rc4.d/S20orientdb -> ../init.d/orientdb
    /etc/rc5.d/S20orientdb -> ../init.d/orientdb
-Step 7 — Starting OrientDB
+
+
+Starting OrientDB
 
 With everything in place, you may now start the service:
 
@@ -399,11 +393,11 @@ sudo service orientdb start
 
 Verify that it really did start:
 
-sudo service orientdb status
+ sudo service orientdb status
 
 You may also use the netstat commands from Step 3 to verify that the server is listening on the ports. If the server does not start, check for clues in the error log file in the /opt/orientdb/log directory.
 
-Step 8 — Connecting to OrientDB Studio
+ Connecting to OrientDB Studio
 
 OrientDB Studio is the web interface for managing OrientDB. By default, it's listening on port 2480. To connect to it, open your browser and type the following into the address bar:
 
@@ -425,11 +419,6 @@ sudo service iptables-persistent reload
 
 That should do it for connecting to the OrientDB Studio.
 
-Conclusion
-
-Congratulations! You've just installed the Community edition of OrientDB on your server. To learn more, check out the How To Back Up Your OrientDB Databases on Ubuntu 14.04 and How To Import and Export an OrientDB Database on Ubuntu 14.04 articles.
-
-More information and official OrientDB documentation links can be found on orientdb.com.
 
 Solr Installation
 -----------------
