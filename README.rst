@@ -488,6 +488,7 @@ sudo apt-get update
 
 
 Then install the latest version of Oracle Java 8 with this command:
+
 Step-5
 
 
@@ -506,6 +507,7 @@ Solr can be installed on Ubuntu in different ways, in this article, I will show 
 We will begin by downloading the Solr distribution. First finding the latest version of the available package from their web page, copy the link and download it using the wget command
 
 For this setup, we will use  http://www.us.apache.org/dist/lucene/solr/6.0.1/
+
 Step-7
 
 cd /tmp
@@ -517,18 +519,21 @@ wget http://www.us.apache.org/dist/lucene/solr/6.0.1/solr-6.0.1.tgz
 
 
 Now, run the given below command to extract the service installation file:
+
 Step-9
 
 
 tar xzf solr-6.0.1.tgz solr-6.0.1/bin/install_solr_service.sh --strip-components=2
 
 And install Solr as a service using the script:
+
 Step-10
 
 
 sudo ./install_solr_service.sh solr-6.0.1.tgz
 
 Use this command to check the status of the service
+
 Step-11
 
 
@@ -537,6 +542,7 @@ service solr status
 Creating a Solr search collection:
 
 Using Solr, we can create multiple collections. Run the given command, mention the name of the collection (here gettingstarted) and specify its configurations.
+
 Step-12
 
 
