@@ -690,7 +690,7 @@ PostGreSQL Installation
 -----------------------
 
 How To Install and Use PostgreSQL on Ubuntu 16.04
-Posted May 4, 2016 59.8k views PostgreSQL Ubuntu Ubuntu 16.04
+
 Introduction
 
 Relational database management systems are a key component of many web sites and applications. They provide a structured way to store, organize, and access information.
@@ -700,12 +700,15 @@ PostgreSQL, or Postgres, is a relational database management system that provide
 In this guide, we will demonstrate how to install Postgres on an Ubuntu 16.04 VPS instance and go over some basic ways to use it.
 
 Installation
+
 Ubuntu's default repositories contain Postgres packages, so we can install these easily using the apt packaging system.
 
 Since this is our first time using apt in this session, we need to refresh our local package index. We can then install the Postgres package and a -contrib package that adds some additional utilities and functionality:
 
 sudo apt-get update
+
 sudo apt-get install postgresql postgresql-contrib
+
 Now that our software is installed, we can go over how it works and how it may be different from similar database management systems you may have used.
 
 Using PostgreSQL Roles and Databases
@@ -722,14 +725,17 @@ The installation procedure created a user account called postgres that is associ
 Switch over to the postgres account on your server by typing:
 
 sudo -i -u postgres
+
 You can now access a Postgres prompt immediately by typing:
 
 psql
+
 You will be logged in and able to interact with the database management system right away.
 
 Exit out of the PostgreSQL prompt by typing:
 
 \q
+
 You should now be back in the postgres Linux command prompt.
 
 Accessing a Postgres Prompt Without Switching Accounts
@@ -739,20 +745,25 @@ You can also run the command you'd like with the postgres account directly with 
 For instance, in the last example, we just wanted to get to a Postgres prompt. We could do this in one step by running the single command psql as the postgres user with sudo like this:
 
 sudo -u postgres psql
+
 This will log you directly into Postgres without the intermediary bash shell in between.
 
 Again, you can exit the interactive Postgres session by typing:
 
 \q
+
 Create a New Role
+
 Currently, we just have the postgres role configured within the database. We can create new roles from the command line with the createrole command. The --interactive flag will prompt you for the necessary values.
 
 If you are logged in as the postgres account, you can create a new user by typing:
 
 createuser --interactive
+
 If, instead, you prefer to use sudo for each command without switching from your normal account, you can type:
 
 sudo -u postgres createuser --interactive
+
 The script will prompt you with some choices and, based on your responses, execute the correct Postgres commands to create a user to your specifications.
 
 Output
@@ -761,6 +772,7 @@ Shall the new role be a superuser? (y/n) y
 You can get more control by passing some additional flags. Check out the options by looking at the man page:
 
 man createuser
+
 Create a New Database
 By default, another assumption that the Postgres authentication system makes is that there will be an database with the same name as the role being used to login, which the role has access to.
 
@@ -769,30 +781,37 @@ So if in the last section, we created a user called sammy, that role will attemp
 If you are logged in as the postgres account, you would type something like:
 
 createdb sammy
+
 If, instead, you prefer to use sudo for each command without switching from your normal account, you would type:
 
 sudo -u postgres createdb sammy
+
 Open a Postgres Prompt with the New Role
 To log in with ident based authentication, you'll need a Linux user with the same name as your Postgres role and database.
 
 If you don't have a matching Linux user available, you can create one with the adduser command. You will have to do this from an account with sudo privileges (not logged in as the postgres user):
 
 sudo adduser sammy
+
 Once you have the appropriate account available, you can either switch over and connect to the database by typing:
 
 sudo -i -u sammy
+
 psql
 Or, you can do this inline:
 
 sudo -u sammy psql
+
 You will be logged in automatically assuming that all of the components have been properly configured.
 
 If you want your user to connect to a different database, you can do so by specifying the database like this:
 
 psql -d postgres
+
 Once logged in, you can get check your current connection information by typing:
 
 \conninfo
+
 Output
 You are connected to database "sammy" as user "sammy" via socket in "/var/run/postgresql" at port "5432".
 This can be useful if you are connecting to non-default databases or with non-default users.
@@ -843,6 +862,7 @@ Our playground table is here, but we also have something called playground_equip
 If you want to see just the table without the sequence, you can type:
 
 \dt
+
 Output
           List of relations
  Schema |    Name    | Type  | Owner
@@ -863,6 +883,7 @@ Another thing to keep in mind is that we do not enter a value for the equip_id c
 We can then get back the information we've added by typing:
 
 SELECT * FROM playground;
+
 Output
  equip_id | type  | color  | location  | install_date
 ----------+-------+--------+-----------+--------------
@@ -877,6 +898,7 @@ DELETE FROM playground WHERE type = 'slide';
 If we query our table again, we will see our slide is no longer a part of the table:
 
 SELECT * FROM playground;
+
 Output
  equip_id | type  | color  | location  | install_date
 ----------+-------+--------+-----------+--------------
@@ -891,6 +913,7 @@ ALTER TABLE playground ADD last_maint date;
 If you view your table information again, you will see the new column has been added (but no data has been entered):
 
 SELECT * FROM playground;
+
 Output
  equip_id | type  | color  | location  | install_date | last_maint
 ----------+-------+--------+-----------+--------------+------------
