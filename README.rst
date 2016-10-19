@@ -22,6 +22,7 @@ Prerequisites
 Install MongoDB
 
 1
+
 Import the public key used by the package management system.
 
 The Ubuntu package management tools (i.e. dpkg and apt) ensure package consistency and authenticity by requiring that distributors sign packages with GPG keys. Issue the following command to import the MongoDB public GPG Key:
@@ -29,6 +30,7 @@ The Ubuntu package management tools (i.e. dpkg and apt) ensure package consisten
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
 
 2
+
 Create a list file for MongoDB.
 
 Create the /etc/apt/sources.list.d/mongodb.list list file using the following command:
@@ -202,6 +204,7 @@ sudo mv /opt/orientdb-community-2.1.3 /opt/orientdb
 
 
 Step 3 — Starting the Server
+
 Now that the binary is in place, you can start the server and connect to the console. Before that, navigate to the installation directory:
 
 cd /opt/orientdb
