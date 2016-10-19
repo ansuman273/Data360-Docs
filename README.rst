@@ -434,7 +434,6 @@ More information and official OrientDB documentation links can be found on orien
 Solr Installation
 -----------------
 
-
 How to install and configure Solr 6 on Ubuntu 16.04
 
 What is Apache Solr?
@@ -455,59 +454,25 @@ Update your System
 Use a non-root sudo user to login into your Ubuntu server. Through this user, you will have to perform all the steps and use the Solr later.
 
 To update your system, execute the following command to update your system with latest patches and updates.
+Step-1
+------
 
 sudo apt-get update && apt-get upgrade -y
-
-Install Ubuntu System updates.
 
 Setting up the Java Runtime Environment
 
 Solr is a Java application, so the Java runtime environment needs to be installed first in order to set up Solr.
 
 We have to install Python Software properties in order to install the latest Java 8. Run the following command to install the software.
+Step-2
+------
 
 sudo apt-get install python-software-properties
 
-The output will be similar to this:
-
-root@server1:~# sudo apt-get install python-software-properties
-Reading package lists... Done
-
-Building dependency tree
-
-Reading state information... Done
-
-The following additional packages will be installed:
-
-libpython-stdlib libpython2.7-minimal libpython2.7-stdlib python python-apt
-
-python-minimal python-pycurl python2.7 python2.7-minimal
-
-Suggested packages:
-
-python-doc python-tk python-apt-dbg python-apt-doc libcurl4-gnutls-dev
-
-python-pycurl-dbg python-pycurl-doc python2.7-doc binutils binfmt-support
-
-The following NEW packages will be installed:
-
-libpython-stdlib libpython2.7-minimal libpython2.7-stdlib python python-apt
-
-python-minimal python-pycurl python-software-properties python2.7
-
-python2.7-minimal
-
-0 upgraded, 10 newly installed, 0 to remove and 3 not upgraded.
-
-Need to get 4,070 kB of archives.
-
-After this operation, 17.3 MB of additional disk space will be used.
-
-Do you want to continue? [Y/n]
-
-Press Y to continue.
-Install Python.
 After executing the command, add the webupd8team Java PPA repository in your system by running:
+
+Step-3
+------
 
 sudo add-apt-repository ppa:webupd8team/java
 
@@ -515,62 +480,25 @@ Press [ENTER] when requested. Now, you can easily install the latest version of 
 
 First, update the package lists to fetch the available packages from the new PPA:
 
+Step-4
+------
+
 sudo apt-get update
 
-Update Ubuntu 16.04
+
 
 Then install the latest version of Oracle Java 8 with this command:
+Step-5
+------
 
 sudo apt-get install oracle-java8-installer
 
-The output will be similar to this:
-
-root@server1:~# sudo apt-get install oracle-java8-installer
-
-Reading package lists... Done
-
-Building dependency tree
-
-Reading state information... Done
-
-The following additional packages will be installed:
-
- binutils gsfonts gsfonts-x11 java-common libfontenc1 libxfont1 x11-common xfonts-encodings xfonts-utils
-
-Suggested packages:
-
- binutils-doc binfmt-support visualvm ttf-baekmuk | ttf-unfonts | ttf-unfonts-core ttf-kochi-gothic | ttf-sazanami-gothic ttf-kochi-mincho | ttf-sazanami-mincho ttf-arphic-uming firefox
- | firefox-2 | iceweasel | mozilla-firefox | iceape-browser | mozilla-browser | epiphany-gecko | epiphany-webkit | epiphany-browser | galeon | midbrowser | moblin-web-browser | xulrunner
- | xulrunner-1.9 | konqueror | chromium-browser | midori | google-chrome
-The following NEW packages will be installed:
-
- binutils gsfonts gsfonts-x11 java-common libfontenc1 libxfont1 oracle-java8-installer x11-common xfonts-encodings xfonts-utils
-0 upgraded, 10 newly installed, 0 to remove and 3 not upgraded.
-
-Need to get 6,498 kB of archives.
-
-After this operation, 20.5 MB of additional disk space will be used.
-
-Do you want to continue? [Y/n]
-Press Y to continue.
-
-You MUST agree to the license available in http://java.com/license if you want to use Oracle JDK, clicking on the OK button.
-
-Accept Java License
-
-Downloading Java
-
 The package installs a kind of meta-installer which then downloads the binaries directly from Oracle. After installation process, check the version of Java installed by running the following command
+
+Step-6
+------
+
 java -version
-
-
-java version "1.8.0_91"
-
-Java(TM) SE Runtime Environment (build 1.8.0_91-b14)
-
-Java HotSpot(TM) 64-Bit Server VM (build 25.91-b14, mixed mode)
-
-Now you have installed Java 8 and we will move to the next step.
 
 Installing the Solr application
 
@@ -578,152 +506,49 @@ Solr can be installed on Ubuntu in different ways, in this article, I will show 
 We will begin by downloading the Solr distribution. First finding the latest version of the available package from their web page, copy the link and download it using the wget command
 
 For this setup, we will use  http://www.us.apache.org/dist/lucene/solr/6.0.1/
-
+Step-7
+------
 cd /tmp
+
+Step-8
+------
 
 wget http://www.us.apache.org/dist/lucene/solr/6.0.1/solr-6.0.1.tgz
 
-The output will be similar to this:
 
-root@server1:/tmp# wget http://www.us.apache.org/dist/lucene/solr/6.0.1/solr-6.0.1.tgz
---2016-06-03 11:31:54-- http://www.us.apache.org/dist/lucene/solr/6.0.1/solr-6.0.1.tgz
-Resolving www.us.apache.org (www.us.apache.org)... 140.211.11.105
-Connecting to www.us.apache.org (www.us.apache.org)|140.211.11.105|:80... connected.
-HTTP request sent, awaiting response... 200 OK
-Length: 137924507 (132M) [application/x-gzip]
-Saving to: ‘solr-6.0.1.tgz’
 Now, run the given below command to extract the service installation file:
+Step-9
+------
 
 tar xzf solr-6.0.1.tgz solr-6.0.1/bin/install_solr_service.sh --strip-components=2
 
 And install Solr as a service using the script:
+Step-10
+-------
 
 sudo ./install_solr_service.sh solr-6.0.1.tgz
 
-The output will be similar to this:
-
- root@server1:/tmp# sudo ./install_solr_service.sh solr-6.0.1.tgz
-id: ‘solr’: no such user
-Creating new user: solr
-Adding system user `solr' (UID 111) ...
-Adding new group `solr' (GID 117) ...
-Adding new user `solr' (UID 111) with group `solr' ...
-Creating home directory `/var/solr' ...
-
-Extracting solr-6.0.1.tgz to /opt
-
-
-Installing symlink /opt/solr -> /opt/solr-6.0.1 ...
-
-
-Installing /etc/init.d/solr script ...
-
-
-Installing /etc/default/solr.in.sh ...
-
-? solr.service - LSB: Controls Apache Solr as a Service
- Loaded: loaded (/etc/init.d/solr; bad; vendor preset: enabled)
- Active: active (exited) since Fri 2016-06-03 11:37:05 CEST; 5s ago
- Docs: man:systemd-sysv-generator(8)
- Process: 20929 ExecStart=/etc/init.d/solr start (code=exited, status=0/SUCCESS)
-
-Jun 03 11:36:43 server1 systemd[1]: Starting LSB: Controls Apache Solr as a Service...
-Jun 03 11:36:44 server1 su[20934]: Successful su for solr by root
-Jun 03 11:36:44 server1 su[20934]: + ??? root:solr
-Jun 03 11:36:44 server1 su[20934]: pam_unix(su:session): session opened for user solr by (uid=0)
-Jun 03 11:37:05 server1 solr[20929]: [313B blob data]
-Jun 03 11:37:05 server1 solr[20929]: Started Solr server on port 8983 (pid=20989). Happy searching!
-Jun 03 11:37:05 server1 solr[20929]: [14B blob data]
-Jun 03 11:37:05 server1 systemd[1]: Started LSB: Controls Apache Solr as a Service.
-Service solr installed.
 Use this command to check the status of the service
+Step-11
+-------
 
 service solr status
-
-You should see an output that begins with this:
-root@server1:/tmp# service solr status
-? solr.service - LSB: Controls Apache Solr as a Service
- Loaded: loaded (/etc/init.d/solr; bad; vendor preset: enabled)
- Active: active (exited) since Fri 2016-06-03 11:37:05 CEST; 39s ago
- Docs: man:systemd-sysv-generator(8)
- Process: 20929 ExecStart=/etc/init.d/solr start (code=exited, status=0/SUCCESS)
-
-Jun 03 11:36:43 server1 systemd[1]: Starting LSB: Controls Apache Solr as a Service...
-Jun 03 11:36:44 server1 su[20934]: Successful su for solr by root
-Jun 03 11:36:44 server1 su[20934]: + ??? root:solr
-Jun 03 11:36:44 server1 su[20934]: pam_unix(su:session): session opened for user solr by (uid=0)
-Jun 03 11:37:05 server1 solr[20929]: [313B blob data]
-Jun 03 11:37:05 server1 solr[20929]: Started Solr server on port 8983 (pid=20989). Happy searching!
-Jun 03 11:37:05 server1 solr[20929]: [14B blob data]
-Jun 03 11:37:05 server1 systemd[1]: Started LSB: Controls Apache Solr as a Service.
-
 
 Creating a Solr search collection:
 
 Using Solr, we can create multiple collections. Run the given command, mention the name of the collection (here gettingstarted) and specify its configurations.
+Step-12
+-------
+
 sudo su - solr -c "/opt/solr/bin/solr create -c gettingstarted -n data_driven_schema_configs"
 
-root@server1:/tmp# sudo su - solr -c "/opt/solr/bin/solr create -c gettingstarted -n data_driven_schema_configs"
-
-Copying configuration to new core instance directory:
-/var/solr/data/gettingstarted
-
-Creating new core 'gettingstarted' using command:
-http://localhost:8983/solr/admin/cores?action=CREATE&name=gettingstarted&instanceDir=gettingstarted
-
-{
- "responseHeader":{
- "status":0,
- "QTime":4427},
- "core":"gettingstarted"}
-The new core directory for our first collection has been created. To view the default schema file, got to:
-/opt/solr/server/solr/configsets/data_driven_schema_configs/conf
 
 Use the Solr Web Interface
 The Apache Solr is now accessible on the default port, which is 8983. The admin UI should be accessible at http://your_server_ip:8983/solr. The port should be allowed by your firewall to run the links.
-For example:
-http://192.168.1.100:8983/solr/
-The Solr web interface.
-To see the details of the first collection that we created earlier, select the "gettingstarted" collection in the left menu.
-Details of our data collection.
-After you selected the "gettingstarted" collection, select Documents in the left menu. There you can enter real data in JSON format that will be searchable by Solr. To add more data, copy and paste the following example JSON onto Document field:
-{
- "id": 1,
- "book_title": "My First Book",
- "published": 1985,
- "description": "All about Linux"
-}
-Click on the submit document button after adding the data.
- Submit a document to Solr.
-Status: success
-Response:
 
-{
- "responseHeader": {
- "status": 0,
- "QTime": 189
- }
-}
-Now we can click on Query on the left side then click on Execute Query,
-Execute a query in Solr.
-We will see something like this:
-{
-  "responseHeader":{
-    "status":0,
-    "QTime":24,
-    "params":{
-      "q":"*:*",
-      "indent":"on",
-      "wt":"json",
-      "_":"1464947017056"}},
-  "response":{"numFound":1,"start":0,"docs":[
-      {
-        "id":"1",
-        "book_title":["My First Book"],
-        "published":[1985],
-        "description":["All about Linux"],
-        "_version_":1536108205792296960}]
-  }}
+For example:
+
+http://192.168.1.100:8983/solr/
 
 
 PostGreSQL Installation
