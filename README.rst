@@ -61,6 +61,7 @@ Install a specific release of MongoDB.
 Specify each component package individually and append the version number to the package name, as in the following example that installs the 2.6.9 release of MongoDB:
 
 sudo apt-get install -y mongodb-org=2.6.9 mongodb-org-server=2.6.9 mongodb-org-shell=2.6.9 mongodb-org-mongos=2.6.9 mongodb-org-tools=2.6.9
+
 Pin a specific version of MongoDB.
 
 Although you can specify any available version of MongoDB, apt-get will upgrade the packages when a newer version becomes available. To prevent unintended upgrades, pin the package. To pin the version of MongoDB at the currently installed version, issue the following command sequence:
