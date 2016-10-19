@@ -472,30 +472,49 @@ The output will be similar to this:
 
 root@server1:~# sudo apt-get install python-software-properties
 Reading package lists... Done
+
 Building dependency tree
+
 Reading state information... Done
+
 The following additional packages will be installed:
+
 libpython-stdlib libpython2.7-minimal libpython2.7-stdlib python python-apt
+
 python-minimal python-pycurl python2.7 python2.7-minimal
+
 Suggested packages:
+
 python-doc python-tk python-apt-dbg python-apt-doc libcurl4-gnutls-dev
+
 python-pycurl-dbg python-pycurl-doc python2.7-doc binutils binfmt-support
+
 The following NEW packages will be installed:
+
 libpython-stdlib libpython2.7-minimal libpython2.7-stdlib python python-apt
+
 python-minimal python-pycurl python-software-properties python2.7
+
 python2.7-minimal
+
 0 upgraded, 10 newly installed, 0 to remove and 3 not upgraded.
+
 Need to get 4,070 kB of archives.
+
 After this operation, 17.3 MB of additional disk space will be used.
+
 Do you want to continue? [Y/n]
 
 Press Y to continue.
 Install Python.
 After executing the command, add the webupd8team Java PPA repository in your system by running:
+
 sudo add-apt-repository ppa:webupd8team/java
 
 Press [ENTER] when requested. Now, you can easily install the latest version of Java 8 with apt.
+
 First, update the package lists to fetch the available packages from the new PPA:
+
 sudo apt-get update
 
 Update Ubuntu 16.04
@@ -507,33 +526,54 @@ sudo apt-get install oracle-java8-installer
 The output will be similar to this:
 
 root@server1:~# sudo apt-get install oracle-java8-installer
+
 Reading package lists... Done
+
 Building dependency tree
+
 Reading state information... Done
+
 The following additional packages will be installed:
+
  binutils gsfonts gsfonts-x11 java-common libfontenc1 libxfont1 x11-common xfonts-encodings xfonts-utils
+
 Suggested packages:
+
  binutils-doc binfmt-support visualvm ttf-baekmuk | ttf-unfonts | ttf-unfonts-core ttf-kochi-gothic | ttf-sazanami-gothic ttf-kochi-mincho | ttf-sazanami-mincho ttf-arphic-uming firefox
  | firefox-2 | iceweasel | mozilla-firefox | iceape-browser | mozilla-browser | epiphany-gecko | epiphany-webkit | epiphany-browser | galeon | midbrowser | moblin-web-browser | xulrunner
  | xulrunner-1.9 | konqueror | chromium-browser | midori | google-chrome
 The following NEW packages will be installed:
+
  binutils gsfonts gsfonts-x11 java-common libfontenc1 libxfont1 oracle-java8-installer x11-common xfonts-encodings xfonts-utils
 0 upgraded, 10 newly installed, 0 to remove and 3 not upgraded.
+
 Need to get 6,498 kB of archives.
+
 After this operation, 20.5 MB of additional disk space will be used.
+
 Do you want to continue? [Y/n]
 Press Y to continue.
+
 You MUST agree to the license available in http://java.com/license if you want to use Oracle JDK, clicking on the OK button.
+
 Accept Java License
+
 Downloading Java
+
 The package installs a kind of meta-installer which then downloads the binaries directly from Oracle. After installation process, check the version of Java installed by running the following command
 java -version
 
+
 java version "1.8.0_91"
+
 Java(TM) SE Runtime Environment (build 1.8.0_91-b14)
+
 Java HotSpot(TM) 64-Bit Server VM (build 25.91-b14, mixed mode)
+
 Now you have installed Java 8 and we will move to the next step.
+
 Installing the Solr application
+
 Solr can be installed on Ubuntu in different ways, in this article, I will show you how to install the latest package from the source.
 We will begin by downloading the Solr distribution. First finding the latest version of the available package from their web page, copy the link and download it using the wget command
 
