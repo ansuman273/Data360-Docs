@@ -437,23 +437,39 @@ Solr Installation
 
 How to install and configure Solr 6 on Ubuntu 16.04
 
-What is Apache Solr? Apache Solr is an open source enterprise-class search platform written in Java which enables you to create custom search engines that index databases, files, and websites. It has back end support for Apache Lucene. It can e.g. be used to search in multiple websites and can show recommendations for the searched content. Solr uses an XML (Extensible Markup Language) based query and result language. There are APIs (Applications program interfaces) available for Python, Ruby and JSON (Javascript Object Notation).
+What is Apache Solr?
+   Apache Solr is an open source enterprise-class search platform written in Java which enables you to create custom search engines that index databases, files, and websites. It has back end support for Apache Lucene. It can e.g. be used to search in multiple websites and can show recommendations for the searched content. Solr uses an XML (Extensible Markup Language) based query and result language. There are APIs (Applications program interfaces) available for Python, Ruby and JSON (Javascript Object Notation).
 Some other features that Solr provides are:
 Full-Text Search.
+
 Snippet generation and highlighting.
+
 Custom Document ordering/ranking.
+
 Spell Suggestions.
+
 This tutorial will show you how to install the latest Solr version on Ubuntu 16.04 LTS. The steps will most likely work with later Ubuntu versions as well.
+
 Update your System
+
 Use a non-root sudo user to login into your Ubuntu server. Through this user, you will have to perform all the steps and use the Solr later.
 
 To update your system, execute the following command to update your system with latest patches and updates.
+
 sudo apt-get update && apt-get upgrade -y
 
 Install Ubuntu System updates.
+
 Setting up the Java Runtime Environment
+
 Solr is a Java application, so the Java runtime environment needs to be installed first in order to set up Solr.
+
 We have to install Python Software properties in order to install the latest Java 8. Run the following command to install the software.
+
+sudo apt-get install python-software-properties
+
+The output will be similar to this:
+
 root@server1:~# sudo apt-get install python-software-properties
 Reading package lists... Done
 Building dependency tree
@@ -483,8 +499,12 @@ First, update the package lists to fetch the available packages from the new PPA
 sudo apt-get update
 
 Update Ubuntu 16.04
+
 Then install the latest version of Oracle Java 8 with this command:
+
 sudo apt-get install oracle-java8-installer
+
+The output will be similar to this:
 
 root@server1:~# sudo apt-get install oracle-java8-installer
 Reading package lists... Done
@@ -516,9 +536,14 @@ Now you have installed Java 8 and we will move to the next step.
 Installing the Solr application
 Solr can be installed on Ubuntu in different ways, in this article, I will show you how to install the latest package from the source.
 We will begin by downloading the Solr distribution. First finding the latest version of the available package from their web page, copy the link and download it using the wget command
+
 For this setup, we will use  http://www.us.apache.org/dist/lucene/solr/6.0.1/
+
 cd /tmp
+
 wget http://www.us.apache.org/dist/lucene/solr/6.0.1/solr-6.0.1.tgz
+
+The output will be similar to this:
 
 root@server1:/tmp# wget http://www.us.apache.org/dist/lucene/solr/6.0.1/solr-6.0.1.tgz
 --2016-06-03 11:31:54-- http://www.us.apache.org/dist/lucene/solr/6.0.1/solr-6.0.1.tgz
@@ -528,12 +553,15 @@ HTTP request sent, awaiting response... 200 OK
 Length: 137924507 (132M) [application/x-gzip]
 Saving to: ‘solr-6.0.1.tgz’
 Now, run the given below command to extract the service installation file:
+
 tar xzf solr-6.0.1.tgz solr-6.0.1/bin/install_solr_service.sh --strip-components=2
 
 And install Solr as a service using the script:
+
 sudo ./install_solr_service.sh solr-6.0.1.tgz
 
 The output will be similar to this:
+
  root@server1:/tmp# sudo ./install_solr_service.sh solr-6.0.1.tgz
 id: ‘solr’: no such user
 Creating new user: solr
@@ -569,6 +597,7 @@ Jun 03 11:37:05 server1 solr[20929]: [14B blob data]
 Jun 03 11:37:05 server1 systemd[1]: Started LSB: Controls Apache Solr as a Service.
 Service solr installed.
 Use this command to check the status of the service
+
 service solr status
 
 You should see an output that begins with this:
@@ -590,6 +619,7 @@ Jun 03 11:37:05 server1 systemd[1]: Started LSB: Controls Apache Solr as a Servi
 
 
 Creating a Solr search collection:
+
 Using Solr, we can create multiple collections. Run the given command, mention the name of the collection (here gettingstarted) and specify its configurations.
 sudo su - solr -c "/opt/solr/bin/solr create -c gettingstarted -n data_driven_schema_configs"
 
