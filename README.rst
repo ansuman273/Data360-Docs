@@ -452,8 +452,9 @@ Update your System
 Use a non-root sudo user to login into your Ubuntu server. Through this user, you will have to perform all the steps and use the Solr later.
 
 To update your system, execute the following command to update your system with latest patches and updates.
+
 Step-1
-------
+
 
 sudo apt-get update && apt-get upgrade -y
 
@@ -462,6 +463,7 @@ Setting up the Java Runtime Environment
 Solr is a Java application, so the Java runtime environment needs to be installed first in order to set up Solr.
 
 We have to install Python Software properties in order to install the latest Java 8. Run the following command to install the software.
+
 Step-2
 
 
