@@ -34,7 +34,9 @@ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
 Create a list file for MongoDB.
 
 Create the /etc/apt/sources.list.d/mongodb.list list file using the following command:
+
 Step 2 -
+
 echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | sudo tee /etc/apt/sources.list.d/mongodb.list
 
 
@@ -42,6 +44,7 @@ echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | 
 Reload local package database.
 
 Issue the following command to reload the local package database:
+
 Step 4 -
 sudo apt-get update
 
@@ -54,18 +57,24 @@ You can install either the latest stable version of MongoDB or a specific versio
 Install the latest stable version of MongoDB.
 
 Issue the following command:
+
 Step 5 -
+
 sudo apt-get install -y mongodb-org
 Install a specific release of MongoDB.
 
 Specify each component package individually and append the version number to the package name, as in the following example that installs the 2.6.9 release of MongoDB:
+
 Step 6 -
+
 sudo apt-get install -y mongodb-org=2.6.9 mongodb-org-server=2.6.9 mongodb-org-shell=2.6.9 mongodb-org-mongos=2.6.9 mongodb-org-tools=2.6.9
 
 Pin a specific version of MongoDB.
 
 Although you can specify any available version of MongoDB, apt-get will upgrade the packages when a newer version becomes available. To prevent unintended upgrades, pin the package. To pin the version of MongoDB at the currently installed version, issue the following command sequence:
+
 Step 7 -
+
 echo "mongodb-org hold" | sudo dpkg --set-selections
 echo "mongodb-org-server hold" | sudo dpkg --set-selections
 echo "mongodb-org-shell hold" | sudo dpkg --set-selections
@@ -175,26 +184,26 @@ OrientDB is a Java application that requires Java version 1.6 or higher. Because
 To install Java JRE, add the following Personal Package Archives (PPA):
 
 Step-1
-------
+
 sudo add-apt-repository ppa:webupd8team/java
 
 Update the package database:
 
 Step-2
-------
+
 
 sudo apt-get update
 
 Then install Oracle Java. Installing it using this particular package not only installs it, but also makes it the default Java JRE. When prompted, accept the license agreement:
 
 Step-3
-------
+
 sudo apt-get install oracle-java8-set-default
 
 After installing it, verify that it's now the default Java JRE:
 
 Step-4
-------
+
 java -version
 
 The expected output is as follows (the exact version may vary):
@@ -212,14 +221,14 @@ In this step, we'll download and install the latest Community edition of OrientD
 
 Step-5
 
-------
+
 wget https://orientdb.com/download.php?file=orientdb-community-2.1.3.tar.gz
 
 The downloaded tarball contains pre-compiled binary files that you need to run OrientDB on your system, so all you need to do is untar it to a suitable directory. Since the /opt is the traditional location for third party programs on Linux, let's untar it there:
 
 
 Step-6
-------
+
 sudo tar -xf download.php?file=orientdb-community-2.1.3.tar.gz -C /opt
 
 The files are extracted into a directory named orientdb-community-2.1.3. To make it easier to work with, let's rename it:
@@ -233,13 +242,13 @@ Starting the Server
 Now that the binary is in place, you can start the server and connect to the console. Before that, navigate to the installation directory:
 
 Step-7
-------
+
 cd /opt/orientdb
 
 Then start the server:
 
 Step-8
-------
+
 sudo bin/server.sh
 
 
@@ -454,14 +463,14 @@ Solr is a Java application, so the Java runtime environment needs to be installe
 
 We have to install Python Software properties in order to install the latest Java 8. Run the following command to install the software.
 Step-2
-------
+
 
 sudo apt-get install python-software-properties
 
 After executing the command, add the webupd8team Java PPA repository in your system by running:
 
 Step-3
-------
+
 
 sudo add-apt-repository ppa:webupd8team/java
 
@@ -470,7 +479,7 @@ Press [ENTER] when requested. Now, you can easily install the latest version of 
 First, update the package lists to fetch the available packages from the new PPA:
 
 Step-4
-------
+
 
 sudo apt-get update
 
@@ -478,14 +487,14 @@ sudo apt-get update
 
 Then install the latest version of Oracle Java 8 with this command:
 Step-5
-------
+
 
 sudo apt-get install oracle-java8-installer
 
 The package installs a kind of meta-installer which then downloads the binaries directly from Oracle. After installation process, check the version of Java installed by running the following command
 
 Step-6
-------
+
 
 java -version
 
@@ -496,30 +505,30 @@ We will begin by downloading the Solr distribution. First finding the latest ver
 
 For this setup, we will use  http://www.us.apache.org/dist/lucene/solr/6.0.1/
 Step-7
-------
+
 cd /tmp
 
 Step-8
-------
+
 
 wget http://www.us.apache.org/dist/lucene/solr/6.0.1/solr-6.0.1.tgz
 
 
 Now, run the given below command to extract the service installation file:
 Step-9
-------
+
 
 tar xzf solr-6.0.1.tgz solr-6.0.1/bin/install_solr_service.sh --strip-components=2
 
 And install Solr as a service using the script:
 Step-10
--------
+
 
 sudo ./install_solr_service.sh solr-6.0.1.tgz
 
 Use this command to check the status of the service
 Step-11
--------
+
 
 service solr status
 
@@ -527,7 +536,7 @@ Creating a Solr search collection:
 
 Using Solr, we can create multiple collections. Run the given command, mention the name of the collection (here gettingstarted) and specify its configurations.
 Step-12
--------
+
 
 sudo su - solr -c "/opt/solr/bin/solr create -c gettingstarted -n data_driven_schema_configs"
 
